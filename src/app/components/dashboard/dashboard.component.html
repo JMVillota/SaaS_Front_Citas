@@ -1,0 +1,117 @@
+<div class="grid">
+    <div class="col-12 lg:col-6 xl:col-3">
+        <div class="card mb-0">
+            <div class="flex justify-content-between mb-3">
+                <div>
+                    <span class="block text-500 font-medium mb-3">Citas</span>
+                    <div class="text-900 font-medium text-xl">152</div>
+                </div>
+                <div class="flex align-items-center justify-content-center bg-blue-100 border-round" [ngStyle]="{width: '2.5rem', height: '2.5rem'}">
+                    <i class="pi pi-calendar text-blue-500 text-xl"></i>
+                </div>
+            </div>
+            <span class="text-green-500 font-medium">24 nuevas </span>
+            <span class="text-500">desde la última semana</span>
+        </div>
+    </div>
+    <div class="col-12 lg:col-6 xl:col-3">
+        <div class="card mb-0">
+            <div class="flex justify-content-between mb-3">
+                <div>
+                    <span class="block text-500 font-medium mb-3">Ingresos</span>
+                    <div class="text-900 font-medium text-xl">$2.100</div>
+                </div>
+                <div class="flex align-items-center justify-content-center bg-orange-100 border-round" [ngStyle]="{width: '2.5rem', height: '2.5rem'}">
+                    <i class="pi pi-dollar text-orange-500 text-xl"></i>
+                </div>
+            </div>
+            <span class="text-green-500 font-medium">+52% </span>
+            <span class="text-500">desde la última semana</span>
+        </div>
+    </div>
+    <div class="col-12 lg:col-6 xl:col-3">
+        <div class="card mb-0">
+            <div class="flex justify-content-between mb-3">
+                <div>
+                    <span class="block text-500 font-medium mb-3">Pacientes</span>
+                    <div class="text-900 font-medium text-xl">28441</div>
+                </div>
+                <div class="flex align-items-center justify-content-center bg-cyan-100 border-round" [ngStyle]="{width: '2.5rem', height: '2.5rem'}">
+                    <i class="pi pi-users text-cyan-500 text-xl"></i>
+                </div>
+            </div>
+            <span class="text-green-500 font-medium">520 </span>
+            <span class="text-500">nuevos registros</span>
+        </div>
+    </div>
+    <div class="col-12 lg:col-6 xl:col-3">
+        <div class="card mb-0">
+            <div class="flex justify-content-between mb-3">
+                <div>
+                    <span class="block text-500 font-medium mb-3">Mensajes</span>
+                    <div class="text-900 font-medium text-xl">152 Sin leer</div>
+                </div>
+                <div class="flex align-items-center justify-content-center bg-purple-100 border-round" [ngStyle]="{width: '2.5rem', height: '2.5rem'}">
+                    <i class="pi pi-comment text-purple-500 text-xl"></i>
+                </div>
+            </div>
+            <span class="text-green-500 font-medium">85 </span>
+            <span class="text-500">respondidos</span>
+        </div>
+    </div>
+
+    <div class="col-12 xl:col-6">
+        <div class="card">
+            <h5>Resumen de Citas</h5>
+            <p-chart type="line" [data]="chartData" [options]="chartOptions"></p-chart>
+        </div>
+    </div>
+
+    <div class="col-12 xl:col-6">
+        <div class="card">
+            <div class="flex align-items-center justify-content-between mb-4">
+                <h5>Notificaciones</h5>
+                <div>
+                    <button pButton type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-text p-button-plain" (click)="menu.toggle($event)"></button>
+                    <p-menu #menu [popup]="true" [model]="items"></p-menu>
+                </div>
+            </div>
+
+            <span class="block text-600 font-medium mb-3">HOY</span>
+            <ul class="p-0 mx-0 mt-0 mb-4 list-none">
+                <li class="flex align-items-center py-2 border-bottom-1 surface-border">
+                    <div class="w-3rem h-3rem flex align-items-center justify-content-center bg-blue-100 border-circle mr-3 flex-shrink-0">
+                        <i class="pi pi-calendar text-xl text-blue-500"></i>
+                    </div>
+                    <span class="text-900 line-height-3">María García
+                        <span class="text-700"> ha programado una cita para <span class="text-blue-500">mañana a las 10:00</span></span>
+                    </span>
+                </li>
+                <li class="flex align-items-center py-2">
+                    <div class="w-3rem h-3rem flex align-items-center justify-content-center bg-orange-100 border-circle mr-3 flex-shrink-0">
+                        <i class="pi pi-dollar text-xl text-orange-500"></i>
+                    </div>
+                    <span class="text-700 line-height-3">Se ha registrado un pago de <span class="text-blue-500 font-medium">150€</span> por el tratamiento de blanqueamiento.</span>
+                </li>
+            </ul>
+
+            <span class="block text-600 font-medium mb-3">AYER</span>
+            <ul class="p-0 m-0 list-none">
+                <li class="flex align-items-center py-2 border-bottom-1 surface-border">
+                    <div class="w-3rem h-3rem flex align-items-center justify-content-center bg-blue-100 border-circle mr-3 flex-shrink-0">
+                        <i class="pi pi-user text-xl text-blue-500"></i>
+                    </div>
+                    <span class="text-900 line-height-3">Carlos Rodríguez
+                        <span class="text-700"> ha completado su primera visita.</span>
+                    </span>
+                </li>
+                <li class="flex align-items-center py-2 border-bottom-1 surface-border">
+                    <div class="w-3rem h-3rem flex align-items-center justify-content-center bg-pink-100 border-circle mr-3 flex-shrink-0">
+                        <i class="pi pi-question text-xl text-pink-500"></i>
+                    </div>
+                    <span class="text-900 line-height-3">Ana Martínez<span class="text-700"> ha enviado una consulta sobre blanqueamiento dental.</span></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

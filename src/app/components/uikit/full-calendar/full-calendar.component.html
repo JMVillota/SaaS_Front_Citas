@@ -1,0 +1,20 @@
+<div class="card">
+  <h5>CALENDARIO</h5>
+  <div class="calendar-wrapper">
+    <full-calendar [options]="calendarOptions">
+    </full-calendar>
+  </div>
+</div>
+
+<p-dialog header="Detalles del Evento" [(visible)]="displayDialog" [modal]="true"
+  [style]="{width: '90vw', maxWidth: '500px'}" [responsive]="true"
+  [breakpoints]="{'960px': '75vw', '640px': '100vw'}">
+  <ng-template pTemplate="content">
+    <p><strong>Título:</strong> {{ selectedEvent.title }}</p>
+    <p><strong>Fecha:</strong> {{ selectedEvent.start }}</p>
+    <p><strong>Descripción:</strong> {{ selectedEvent.extendedProps?.description }}</p>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton type="button" label="Cerrar" (click)="closeDialog()"></button>
+  </ng-template>
+</p-dialog>

@@ -1,0 +1,39 @@
+.calendar-wrapper {
+    width: 100%;
+    max-width: 1200px; // Ajusta según tus necesidades
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .calendar-wrapper {
+      padding: 5px;
+    }
+  }
+  
+  ::ng-deep {
+    .fc .fc-toolbar {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .fc .fc-toolbar-title {
+      font-size: 1.2em;
+    }
+  
+    .fc .fc-button {
+      font-size: 0.9em;
+      padding: 0.3em 0.5em;
+    }
+  
+    @media screen and (max-width: 480px) {
+      .fc .fc-toolbar-title {
+        font-size: 1em;
+      }
+  
+      .fc .fc-button {
+        font-size: 0.8em;
+        padding: 0.2em 0.4em;
+      }
+    }
+  }
